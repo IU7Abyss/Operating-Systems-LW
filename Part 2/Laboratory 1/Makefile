@@ -1,11 +1,15 @@
-daemon: daemonize.o main.o
-	cc daemonize.o main.o -o daemon
+daemon: daemonize.o single.o main.o
+	cc -pthread daemonize.o single.o main.o -o daemon
 
-daemonize.o: daemonize.c
-	cc -c daemonize.c
+daemonize.o: daemonize.c daemonize.h
+	cc -pthread -c daemonize.c
+
+single.o: single.c single.h
+	cc -pthread -c single.c
 
 main.o: main.c
-	cc -c main.c
+	cc -pthread -c main.c
 
+.PHONY = clean
 clean:
-	rm *.o daemon
+	-rm *.o daemon
