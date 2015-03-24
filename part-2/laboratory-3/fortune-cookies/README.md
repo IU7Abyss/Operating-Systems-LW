@@ -39,7 +39,7 @@ $ echo "You learn from your mistakes... You will learn a lot today." > /proc/for
 $ echo "A dream you have will come true." > /proc/fortune
 ```
 
-### Считываем сообщение
+### Считываем сообщения
 
 ```
 $ cat /proc/fortune
@@ -73,7 +73,7 @@ $ lsmod | grep fortune
 nothing
 ```
 
-### Клиниим
+### Клиним
 
 ```
 $ make clean
