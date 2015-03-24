@@ -30,3 +30,12 @@
 
 # For OS X users
 .DS_Store
+
+# Linux Module
+.tmp_versions
+*.symvers
+*.order
+*.ko
+.*.*.*
+*.mod.c
+*.o
