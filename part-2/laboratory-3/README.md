@@ -1,6 +1,12 @@
-# Файловая система /proc
+# Лабораторная работа №3
 
-*Начальная концепция:* средство предоставления информации о выполняющихся процеесах
+## Постоновка задачи
+
+Раcширить функционал ядра с помощью своего *LKM* (на примере судьбоносных печенек).
+
+## Файловая система /proc
+
+*Начальная концепция:* средство предоставления информации о выполняющихся процеcсах
 
 `/proc` содержит:
 * директории для структурирования информации
@@ -13,15 +19,12 @@ $ ls /proc
 ```
 
 * файл с номерным именем: директория, содержащая информацию о выполняющимся процессе;
-
 * `cpuinfo`: информация о типе и производительности ЦП;
-
 * `pci`: устройства на шине PCI;
-
 * `modules`: модули загруженные в ядро.
 
 
-# Загружаемый модуль ядра (LKM)
+## Загружаемый модуль ядра (LKM)
 
 *Проблема:* ограичение по памяти => необходимо компактное ядро => нужно убрать код, который не используется постоянно => необходим некоторый механизи.
 
@@ -29,37 +32,15 @@ $ ls /proc
 
 *Пример:* Драйверы для подключаемых устройств
 
-*LKM* позволяет динамически добавлять (удалять) код из _kernel_. LKM - удобное средство реалиизации драйверов и файловых систем.
+*LKM* позволяет расширять функционал _kernel_ без повторной компиляции. LKM - удобное средство реалиизации драйверов и файловых систем.
 
-Пример простого LKM разобран в папке `example`
+Пример простого LKM разобран в папке `example` (работает с kernel 3.8.0-29 и ниже)
 
+## Полезные ссылки
 
-```c
-#include <linux/module.h>
+* [Статья IBM developerWorks на русском (kernel < 3.11.1)](http://www.ibm.com/developerworks/ru/library/l-proc/)
+* [Её оригинал](http://www.ibm.com/developerworks/linux/library/l-proc/index.html)
+* [StackOverflow proc_creaate()](http://stackoverflow.com/questions/8516021/proc-create-example-for-kernel-module)
+* [Linux: Creating an entry in /proc file system](http://pointer-overloading.blogspot.in/2013/09/linux-creating-entry-in-proc-file.html)
 
-
-/* Лицензия, иначе будет kernel panic*/
-MODULE_LICENSE("GPL");
-
-
-/* Init-функция, вызываемая при загрузке модуля */
-int
-my_module_init(void) {
-	printk(KERN_INFO "my_module_init called.  Module is now loaded.\n");
-	
-	return 0;
-}
-
-/* Cleanup-функция, вызываемая при выгрузке модуля */
-void
-my_module_cleanup(void) {
-	printk(KERN_INFO "my_module_cleanup called.  Module is now unloaded.\n");
-	
-	return;
-}
-
-
-/* Ядру сообщаются названия функций, вызываемых при загрузке и выгрузке модуля */
-module_init(my_module_init);
-module_exit(my_module_cleanup);
-```
+## FAQ
