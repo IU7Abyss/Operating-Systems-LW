@@ -1,8 +1,8 @@
 # Лабораторная работа №3
 
-## Постоновка задачи
+## Постановка задачи
 
-Раcширить функционал ядра с помощью своего *LKM* (на примере судьбоносных печенек).
+Расширить функционал ядра с помощью своего *LKM* (на примере судьбоносных печенек).
 
 ## Файловая система /proc
 
@@ -12,9 +12,9 @@
 * директории для структурирования информации
 * виртуальные файлы
 
-*Виртуальные файлы:* средство передачи информаци из _kernel_ (в _kernel_).
+*Виртуальные файлы:* средство передачи информации из _kernel_ (в _kernel_).
 
-```bash
+```
 $ ls /proc
 ```
 
@@ -40,7 +40,5 @@ $ ls /proc
 
 * [Статья IBM developerWorks на русском (kernel < 3.11.1)](http://www.ibm.com/developerworks/ru/library/l-proc/)
 * [Её оригинал](http://www.ibm.com/developerworks/linux/library/l-proc/index.html)
-* [StackOverflow proc_creaate()](http://stackoverflow.com/questions/8516021/proc-create-example-for-kernel-module)
+* [StackOverflow proc_create()](http://stackoverflow.com/questions/8516021/proc-create-example-for-kernel-module)
 * [Linux: Creating an entry in /proc file system](http://pointer-overloading.blogspot.in/2013/09/linux-creating-entry-in-proc-file.html)
-
-## FAQ
