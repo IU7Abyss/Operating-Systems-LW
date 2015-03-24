@@ -19,7 +19,7 @@
 $ make
 ```
 
-Если всё ок, то сгенерится `simple-ikm.ko`.
+Если всё ок, то сгенерится `simple-lkm.ko`.
 
 #### Загруженные модули
 
@@ -30,10 +30,10 @@ $ lsmod
 #### Загружаем 
 
 ```
-# insmod simple-ikm.ko
+# insmod simple-lkm.ko
 ```
 
-Ищем в списке `simple-ikm`
+Ищем в списке `simple-lkm`
 
 ```
 $ lsmod
