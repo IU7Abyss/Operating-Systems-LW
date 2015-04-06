@@ -132,7 +132,7 @@ readdir()
 
 Когда счётчик ссылок достигнет `0` и при этом ни один из процессов не держит директорию открытым.
 
----
-
 # Links
-http://pubs.opengroup.org/onlinepubs/9699919799/
+- http://pubs.opengroup.org/onlinepubs/9699919799/
+- https://www.freebsd.org/cgi/man.cgi
+- https://www.kernel.org/doc/man-pages/
